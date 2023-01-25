@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Feeling</title>
+    <link rel="stylesheet" href="new.css">
+</head>
+
+<body id="whole"> 
+    
+    <h1 onclick="hwyf()">Turn your feeling into color!</h1> 
+
+    <!-- TOO SWITCH, DISPLAY IMAGE AND BUTTON -->
+    <div class="div3">
+        <img src="" id="img">  <!-- where the image will pop up -->
+        <input type="button" value="Type answer" id="btn" onclick="feelings()">  <!-- button for "playing" -->
+    </div> 
+
+    <input type="button" value="Reset" id="btn2" onclick="location.reload()">  <!-- button for "reloadin page" -->
+
+    <!-- MULTIPLUE IMAGES -->
+    <div id="images">
+        <div id="pic">
+            <img onclick="color('loved')" alt="feeling" src="loved.png" class="multiimg">
+            <img onclick="color('sad')" alt="feeling" src="sad.png" class="multiimg">
+            <img onclick="color('lonely')" alt="feeling" src="lonely.png" class="multiimg">
+            <img onclick="color('happy')" alt="feeling" src="happy.jpeg" class="multiimg">
+        </div>
+        <div id="opic">
+            <img onclick="color('frustrated')" alt="feeling" src="frustrated.png" class="multiimg">
+            <img onclick="color('angry')" alt="feeling" src="angry.png" class="multiimg">
+            <img onclick="color('tired')" alt="feeling" src="tired.png" class="multiimg">
+            <img onclick="color('peaceful')" alt="feeling" src="peaceful.jpg" class="multiimg">
+        </div>
+    </div>
+
+    <fieldset class="eplist">
+        <h3> List of feelings</h3>
+        <ul>
+            <li>Loved</li>
+            <li>Sad</li>
+            <li>Lonely</li>
+            <li>Happy</li>
+            <li>Frustrated</li>
+            <li>Angry</li>
+            <li>Tired</li>
+            <li>Peaceful</li>
+        </ul>
+    </fieldset>
+
+    <div id="parag">
+        <p id="pr"></p>
+    </div>
+
+    <fieldset class="sit">
+        <p class="plast"> Let's see how you are feeling!</p> <!-- a paragraph -->
+    </fieldset>
+
+    <audio loop autoplay>
+        <source src="cjm.wav" type="audio/mp3">
+    </audio>
+    
+   <script>
+
+        let aa = document.getElementById("whole"); //fetching the body to alter the background and adding a gif 
+        aa.style.backgroundImage = "url('https://cdn.dribbble.com/users/252149/screenshots/2589640/6deg_emotions.gif')";
+        aa.style.backgroundSize = "cover";
+
+        //function for turning your feeling into color and an image
+
+        function color(img) {
+                        
+            if (img === "loved") {
+                document.getElementById("whole").style.backgroundImage = "";
+                document.getElementById("img").src = "loved.png";
+                let e = document.getElementById("whole");
+                e.style.backgroundColor = "#F08080";
+                document.getElementById("pr").innerHTML = "Pink is a light red hue and is typically associated with love and romance. It is often described as a feminine color, perhaps due to associations people form during early childhood."; 
+            }
+            
+            else if(img === "sad") {
+                document.getElementById("whole").style.backgroundImage = ""; //setting the background to nothing (removing the gif
+                document.getElementById("img").src = "sad.png"; //inserting the image of the feeling
+                let a = document.getElementById("whole"); //fetching the body through id
+                a.style.backgroundColor = "#00008B"; // styling the background color
+                document.getElementById("pr").innerHTML = "In Greek mythology, blue is associated with rain. As far Zeus was concerned, whenever he was angry he would create a storm but whenever he was sad or crying, he would make it rain. Thus, the connection between the colour and the feeling.";
+            }
+
+            else if (img === "lonely") {
+                document.getElementById("whole").style.backgroundImage = "";
+                document.getElementById("img").src = "lonely.png";
+                let c = document.getElementById("whole");
+                c.style.backgroundColor = "#A9A9A9";
+                document.getElementById("pr").innerHTML = "However, certain parts of the brain and specific functions, like the ability to detect social threat, appear to be strengthened. A 2020 population-genetics study looked for signatures of loneliness in grey matter morphology, intrinsic functional coupling, and fiber tract microstructure. The loneliness-linked neurobiological profiles converged on a collection of brain regions known as the default mode network. This higher associative network shows more consistent loneliness associations in grey matter volume than other cortical brain networks. Lonely individuals display stronger functional communication in the default network, and greater microstructural integrity of its fornix pathway. The findings fit with the possibility that the up-regulation of these neural circuits supports mentalizing, reminiscence and imagination to fill the social void.";
+            }
+
+            else if (img === "happy") {
+                document.getElementById("whole").style.backgroundImage = "";
+                document.getElementById("img").src = "happy.jpeg";
+                let b = document.getElementById("whole");
+                b.style.backgroundColor = "#ffff00";
+                document.getElementById("pr").innerHTML = "Research has suggested two main reasons why yellow is considered the happiest color. Many studies have linked the psychological powers of yellow to the sun. Sunlight helps to lift our mood and improve our outlook on life as well as being the source of life on earth. This connection suggests that the brain is programmed to associate yellow with these positive effects of sunlight and stimulate the nervous system. The second reason scientists believe yellow has mood lifting effects is the ability of yellow to stand out from other colors in the spectrum. Studies have suggested that the ability of yellow to stand out from other colors helps to associate the color yellow with positive memories.";
+            }
+
+            else if (img === "frustrated") {
+                document.getElementById("whole").style.backgroundImage = "";    
+                document.getElementById("img").src = "frustrated.png";
+                let g = document.getElementById("whole");
+                g.style.backgroundColor = "#FF4500";
+                document.getElementById("pr").innerHTML = "While it can be an energetic color, this intensity can also have a downside. Sometimes orange can come off as very aggressive and even confrontational. In great quantities, people may be left feeling irritated or even angry when surrounded by orange.";
+            }
+
+            else if (img === "angry") {
+                document.getElementById("whole").style.backgroundImage = "";    
+                document.getElementById("img").src = "angry.png";
+                let d = document.getElementById("whole");
+                d.style.backgroundColor = "#8B0000";
+                document.getElementById("pr").innerHTML = "Red is considered the warmest and most contradictory of the colors. In fact, this fiery hue has more opposing emotional associations than any other color: Red is linked to passion and love as well as power and anger. Across cultures, people intuitively associate red with the concept of anger. This relationship makes sense given that many people get red in the face from increased blood flow when they're angry. The expression 'seeing red' is thought to be based on the physical characteristics associated with anger, including redness of the face and neck, which are caused by elevated blood pressure.";
+            }
+
+            else if (img === "tired") {
+                document.getElementById("whole").style.backgroundImage = "";
+                document.getElementById("img").src = "tired.png";
+                let f = document.getElementById("whole");
+                f.style.backgroundColor = "#663399";
+                document.getElementById("pr").innerHTML = "Softer purple shades may boost sleepiness.Purple is one of the colours that promotes better sleep. In colour symbolism, purple is associated with wisdom, creativity and mysticism the stuff good dreams are made of. ";
+            }
+
+            else if (img === "peaceful") {
+                document.getElementById("whole").style.backgroundImage = "";    
+                document.getElementById("img").src = "peaceful.jpg";
+                let k = document.getElementById("whole");
+                k.style.backgroundColor = "#FAEBD7";
+                document.getElementById("pr").innerHTML = "Beige is dependable, conservative, and flexible. The color beige is neutral, calm, and relaxing. The attributes and meanings associated with beige change based on the colors it accompanies.";
+            }
+
+            else{
+                document.getElementById("whole").style.backgroundImage = "";
+                document.getElementById("img").src = "oops.png";
+                let i = document.getElementById("whole");
+                i.style.backgroundColor = "#A9A9A9";
+                let q = document.getElementById("pr");
+                q.style.textContent = "Something went wrong please try again";
+            }
+        }
+
+        function feelings(feelingAns){ 
+
+        let feelingQ = window.prompt("How are you feeling? \nChoose from the list!"); //creating the prompt window to type in your feeling
+        let feeling = feelingQ.toLowerCase(); //making the answer into lowercase so the capital letters doesn't matter
+        
+        
+        switch(feeling) { //the switch statement
+            case "sad":               //different cases
+                document.getElementById("whole").style.backgroundImage = ""; //setting the background to nothing (removing the gif
+                document.getElementById("img").src = "sad.png"; //inserting the image of the feeling
+                let a = document.getElementById("whole"); //fetching the body through id
+                a.style.backgroundColor = "#00008B"; // styling the background color
+                document.getElementById("pr").innerHTML = "In Greek mythology, blue is associated with rain. As far Zeus was concerned, whenever he was angry he would create a storm but whenever he was sad or crying, he would make it rain. Thus, the connection between the colour and the feeling.";
+                break;
+
+            case "happy":
+                document.getElementById("whole").style.backgroundImage = "";
+                document.getElementById("img").src = "happy.jpeg";
+                let b = document.getElementById("whole");
+                b.style.backgroundColor = "#ffff00";
+                document.getElementById("pr").innerHTML = "Research has suggested two main reasons why yellow is considered the happiest color. Many studies have linked the psychological powers of yellow to the sun. Sunlight helps to lift our mood and improve our outlook on life as well as being the source of life on earth. This connection suggests that the brain is programmed to associate yellow with these positive effects of sunlight and stimulate the nervous system. The second reason scientists believe yellow has mood lifting effects is the ability of yellow to stand out from other colors in the spectrum. Studies have suggested that the ability of yellow to stand out from other colors helps to associate the color yellow with positive memories.";
+                break;
+
+            case "lonely":
+                document.getElementById("whole").style.backgroundImage = "";
+                document.getElementById("img").src = "lonely.png";
+                let c = document.getElementById("whole");
+                c.style.backgroundColor = "#A9A9A9";
+                document.getElementById("pr").innerHTML = "However, certain parts of the brain and specific functions, like the ability to detect social threat, appear to be strengthened. A 2020 population-genetics study looked for signatures of loneliness in grey matter morphology, intrinsic functional coupling, and fiber tract microstructure. The loneliness-linked neurobiological profiles converged on a collection of brain regions known as the default mode network. This higher associative network shows more consistent loneliness associations in grey matter volume than other cortical brain networks. Lonely individuals display stronger functional communication in the default network, and greater microstructural integrity of its fornix pathway. The findings fit with the possibility that the up-regulation of these neural circuits supports mentalizing, reminiscence and imagination to fill the social void.";
+                break
+
+            case "angry":
+                document.getElementById("whole").style.backgroundImage = "";    
+                document.getElementById("img").src = "angry.png";
+                let d = document.getElementById("whole");
+                d.style.backgroundColor = "#8B0000";
+                document.getElementById("pr").innerHTML = "Red is considered the warmest and most contradictory of the colors. In fact, this fiery hue has more opposing emotional associations than any other color: Red is linked to passion and love as well as power and anger. Across cultures, people intuitively associate red with the concept of anger. This relationship makes sense given that many people get red in the face from increased blood flow when they're angry. The expression 'seeing red' is thought to be based on the physical characteristics associated with anger, including redness of the face and neck, which are caused by elevated blood pressure.";
+                break; 
+
+            case "loved":
+                document.getElementById("whole").style.backgroundImage = "";
+                document.getElementById("img").src = "loved.png";
+                let e = document.getElementById("whole");
+                e.style.backgroundColor = "#F08080";
+                document.getElementById("pr").innerHTML = "Pink is a light red hue and is typically associated with love and romance. It is often described as a feminine color, perhaps due to associations people form during early childhood.";
+                break;   
+                    
+            case "tired":
+                document.getElementById("whole").style.backgroundImage = "";
+                document.getElementById("img").src = "tired.png";
+                let f = document.getElementById("whole");
+                f.style.backgroundColor = "#663399";
+                document.getElementById("pr").innerHTML = "Softer purple shades may boost sleepiness.Purple is one of the colours that promotes better sleep. In colour symbolism, purple is associated with wisdom, creativity and mysticism the stuff good dreams are made of. ";
+                break;
+
+            case "frustrated":
+                document.getElementById("whole").style.backgroundImage = "";    
+                document.getElementById("img").src = "frustrated.png";
+                let g = document.getElementById("whole");
+                g.style.backgroundColor = "#FF4500";
+                document.getElementById("pr").innerHTML = "While it can be an energetic color, this intensity can also have a downside. Sometimes orange can come off as very aggressive and even confrontational. In great quantities, people may be left feeling irritated or even angry when surrounded by orange.";
+                break;
+
+            case "peaceful":
+                document.getElementById("whole").style.backgroundImage = "";    
+                document.getElementById("img").src = "peaceful.jpg";
+                let k = document.getElementById("whole");
+                k.style.backgroundColor = "#FAEBD7";
+                document.getElementById("pr").innerHTML = "Beige is dependable, conservative, and flexible. The color beige is neutral, calm, and relaxing. The attributes and meanings associated with beige change based on the colors it accompanies.";
+                break;
+
+            default: // if none of the casses are meet this will happen
+                document.getElementById("whole").style.backgroundImage = "";
+                document.getElementById("img").src = "oops.png";
+                let i = document.getElementById("whole");
+                i.style.backgroundColor = "#A9A9A9";
+                document.getElementById("pr").innerHTML = "Something went wrong please try again";
+        }
+    }
+
+    function hwyf(){
+            let node = document.getElementById("whole");
+            node.style.backgroundImage = "url('https://cdn.dribbble.com/users/252149/screenshots/2589640/6deg_emotions.gif')";
+            document.getElementById("audio");
+            document.getElementById("img").src = "";
+            document.getElementById("pr").innerHTML = "";
+        }
+        
+    </script>
+
+</body>
+</html>
